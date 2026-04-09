@@ -2,6 +2,7 @@ import express from "express";
 import authRouter from "./routes/auth.routes.js";
 import dotenv from "dotenv";
 import cors from "cors";
+import devicesRouter from "./routes/devices.routes.js";
 
 dotenv.config();
 
@@ -16,5 +17,6 @@ app.get("/api", (req, res) => {
 });
 
 app.use("/api/auth", authRouter);
+app.use("/api/devices", devicesRouter);
 
 export default app;
